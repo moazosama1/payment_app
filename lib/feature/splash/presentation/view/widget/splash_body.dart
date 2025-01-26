@@ -2,23 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:payment_app/core/utils/color_app.dart';
 import 'package:payment_app/core/utils/image_path.dart';
 
-class SplashBody extends StatefulWidget {
-  const SplashBody({Key? key}) : super(key: key);
+class SplashBody extends StatelessWidget {
+  SplashBody({Key? key}) : super(key: key);
 
-  @override
-  _SplashBodyState createState() => _SplashBodyState();
-}
-
-class _SplashBodyState extends State<SplashBody> {
   ColorApp colorApp = ColorApp();
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(
-      Duration(seconds: 2),
-      () {},
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +36,7 @@ class _SplashBodyState extends State<SplashBody> {
             Text(
               " App",
               style: TextStyle(
-                  color: ColorApp.greenColor,
+                  color: ColorApp.shadeGreenColor,
                   fontSize: 30,
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.w800),
