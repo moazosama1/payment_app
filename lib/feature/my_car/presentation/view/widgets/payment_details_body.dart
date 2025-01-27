@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:payment_app/core/widgets/custom_button.dart';
+import 'package:payment_app/feature/my_car/presentation/view/thank_you_view.dart';
 import 'package:payment_app/feature/my_car/presentation/view/widgets/custom_credit_card.dart';
 import 'package:payment_app/feature/my_car/presentation/view/widgets/payment_method_list.dart';
 
@@ -33,7 +34,7 @@ class _PaymentDetailsBodyState extends State<PaymentDetailsBody> {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: EdgeInsets.only(bottom: 30),
+                padding: EdgeInsets.only(bottom: 20),
                 child: CustomButton(
                   text: "Pay",
                   onTap: () {
@@ -41,6 +42,7 @@ class _PaymentDetailsBodyState extends State<PaymentDetailsBody> {
                       widget.formKey.currentState!.save();
                       log("success");
                     } else {
+                      Navigator.pushNamed(context, ThankYouView.routeName);
                       widget.autovalidateMode = AutovalidateMode.always;
                       setState(() {});
                     }
