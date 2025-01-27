@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:payment_app/core/utils/image_path.dart';
 import 'package:payment_app/core/widgets/custom_button.dart';
-import 'package:payment_app/feature/my_car/presentation/view/payment_details_view.dart';
+import 'package:payment_app/feature/my_car/presentation/view/widgets/custom_show_dialog.dart';
 import 'package:payment_app/feature/my_car/presentation/view/widgets/order_detailes.dart';
 import 'package:payment_app/feature/my_car/presentation/view/widgets/total_price.dart';
 
 class MyCarBody extends StatelessWidget {
   MyCarBody({Key? key}) : super(key: key);
-  ImagePath imagePath = ImagePath();
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -50,7 +49,18 @@ class MyCarBody extends StatelessWidget {
           ),
           CustomButton(
             onTap: () {
-              Navigator.pushNamed(context, PaymentDetailsView.routeName);
+              // Navigator.pushNamed(context, PaymentDetailsView.routeName);
+              showBottomSheet(
+                context: context,
+                builder: (context) => CustomShowDialog(),
+                showDragHandle: true,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20)),
+                ),
+                backgroundColor: theme.colorScheme.surface,
+              );
             },
             text: "Complete Payment",
           ),
