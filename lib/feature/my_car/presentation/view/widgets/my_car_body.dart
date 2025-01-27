@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:payment_app/core/utils/color_app.dart';
 import 'package:payment_app/core/utils/image_path.dart';
 import 'package:payment_app/core/widgets/custom_button.dart';
-import 'package:payment_app/feature/my_car/presentation/view/widgets/appBar.dart';
+import 'package:payment_app/feature/my_car/presentation/view/payment_details_view.dart';
 import 'package:payment_app/feature/my_car/presentation/view/widgets/order_detailes.dart';
 import 'package:payment_app/feature/my_car/presentation/view/widgets/total_price.dart';
 
@@ -13,16 +12,11 @@ class MyCarBody extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CustomAppBar(text: "My Car"),
-          SizedBox(
-            width: double.infinity,
-            height: 25,
-          ),
-          Image.asset(ImagePath.basketImage),
+          Expanded(child: Image.asset(ImagePath.basketImage)),
           SizedBox(
             height: 25,
           ),
@@ -55,12 +49,16 @@ class MyCarBody extends StatelessWidget {
             height: 16,
           ),
           CustomButton(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, PaymentDetailsView.routeName);
+            },
             text: "Complete Payment",
+          ),
+          const SizedBox(
+            height: 20,
           )
         ],
       ),
     );
   }
 }
-

@@ -3,16 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:payment_app/core/utils/color_app.dart';
 
 class ThemeApp {
-  ColorApp colorApp = ColorApp();
   static ThemeData themeLight = ThemeData(
       scaffoldBackgroundColor: ColorApp.whiteColor,
       fontFamily: GoogleFonts.inter().fontFamily,
       colorScheme: ColorScheme.fromSeed(
-        seedColor: ColorApp.whiteColor,
-        surface: ColorApp.whiteColor,
-        onSurface: ColorApp.blackColor,
-        secondary: ColorApp.greenColor
-      ),
+          seedColor: ColorApp.whiteColor,
+          surface: ColorApp.whiteColor,
+          onSurface: ColorApp.blackColor,
+          secondary: ColorApp.greenColor,
+          outline: ColorApp.greayColor),
       textTheme: TextTheme(
         titleLarge: TextStyle(
             fontSize: 25,
