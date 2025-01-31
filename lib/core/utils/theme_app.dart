@@ -10,7 +10,6 @@ class ThemeApp {
         color: Colors.transparent,
         shadowColor: Colors.transparent,
         elevation: 0,
-
       ),
       fontFamily: GoogleFonts.inter().fontFamily,
       colorScheme: ColorScheme.fromSeed(
@@ -19,8 +18,7 @@ class ThemeApp {
           onSurface: ColorApp.blackColor,
           secondary: ColorApp.greenColor,
           outline: ColorApp.greayColor,
-          surfaceBright: ColorApp.shadeGreayColor
-          ),
+          surfaceBright: ColorApp.shadeGreayColor),
       textTheme: TextTheme(
         titleLarge: TextStyle(
             fontSize: 25,

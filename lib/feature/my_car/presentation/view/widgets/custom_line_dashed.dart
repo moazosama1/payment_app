@@ -5,7 +5,6 @@ class ListOfDashedLine extends StatelessWidget {
     super.key,
   });
 
-
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);

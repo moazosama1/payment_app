@@ -1,11 +1,13 @@
-
 import 'package:flutter/material.dart';
+
 class OrderDetails extends StatelessWidget {
-  const OrderDetails({super.key, 
-     required this.kkey, required this.value,
+  const OrderDetails({
+    super.key,
+    required this.kkey,
+    required this.value,
   });
 
-  final String kkey , value;
+  final String kkey, value;
 
   @override
   Widget build(BuildContext context) {

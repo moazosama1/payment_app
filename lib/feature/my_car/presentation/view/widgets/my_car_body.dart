@@ -59,7 +59,7 @@ class MyCarBody extends StatelessWidget {
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20)),
                 ),
-                backgroundColor: theme.colorScheme.surface,
+                backgroundColor: theme.colorScheme.surfaceBright,
               );
             },
             text: "Complete Payment",

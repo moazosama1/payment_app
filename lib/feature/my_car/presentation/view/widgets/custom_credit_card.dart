@@ -8,8 +8,8 @@ class CustomCreditCard extends StatefulWidget {
     super.key,
   });
 
- GlobalKey<FormState> formKey;
- AutovalidateMode autovalidateMode ;
+  GlobalKey<FormState> formKey;
+  AutovalidateMode autovalidateMode;
   @override
   State<CustomCreditCard> createState() => _CustomCreditCardState();
 }
@@ -18,7 +18,6 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
   String cardNumber = "", expiryDate = "", cardHolderName = "", cvvCode = "";
 
   bool showBackView = false;
-
 
   @override
   Widget build(BuildContext context) {
@@ -37,29 +36,30 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
           onCreditCardWidgetChange: (value) {},
         ),
         CreditCardForm(
-            cardNumber: cardNumber,
-            expiryDate: expiryDate,
-            cardHolderName: cardHolderName,
-            cvvCode: cvvCode,
-            autovalidateMode: widget.autovalidateMode,
-            inputConfiguration: InputConfiguration(
-              cardHolderTextStyle: theme.textTheme.labelSmall!
-                  .copyWith(fontWeight: FontWeight.w600),
-              cardNumberTextStyle: theme.textTheme.labelSmall!
-                  .copyWith(fontWeight: FontWeight.w600),
-              cvvCodeTextStyle: theme.textTheme.labelSmall!
-                  .copyWith(fontWeight: FontWeight.w600),
-              expiryDateTextStyle: theme.textTheme.labelSmall!
-                  .copyWith(fontWeight: FontWeight.w600),
-            ),
-            onCreditCardModelChange: (CreditCardModel) {
-              cardNumber = CreditCardModel.cardNumber;
-              cardHolderName = CreditCardModel.cardHolderName;
-              cvvCode = CreditCardModel.cvvCode;
-              showBackView = CreditCardModel.isCvvFocused;
-              setState(() {});
-            },
-            formKey: widget.formKey,)
+          cardNumber: cardNumber,
+          expiryDate: expiryDate,
+          cardHolderName: cardHolderName,
+          cvvCode: cvvCode,
+          autovalidateMode: widget.autovalidateMode,
+          inputConfiguration: InputConfiguration(
+            cardHolderTextStyle: theme.textTheme.labelSmall!
+                .copyWith(fontWeight: FontWeight.w600),
+            cardNumberTextStyle: theme.textTheme.labelSmall!
+                .copyWith(fontWeight: FontWeight.w600),
+            cvvCodeTextStyle: theme.textTheme.labelSmall!
+                .copyWith(fontWeight: FontWeight.w600),
+            expiryDateTextStyle: theme.textTheme.labelSmall!
+                .copyWith(fontWeight: FontWeight.w600),
+          ),
+          onCreditCardModelChange: (CreditCardModel) {
+            cardNumber = CreditCardModel.cardNumber;
+            cardHolderName = CreditCardModel.cardHolderName;
+            cvvCode = CreditCardModel.cvvCode;
+            showBackView = CreditCardModel.isCvvFocused;
+            setState(() {});
+          },
+          formKey: widget.formKey,
+        )
       ],
     );
   }
